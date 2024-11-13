@@ -39,30 +39,31 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Data Sensor MPU6050</title>
 </head>
-<body>
-    <h1>Data Sensor MPU6050</h1>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Angka Sumbu</th>
-            <th>Arah</th>
-            <th>LDR Value</th>
-            <th>Kondisi Cahaya</th>
-            <th>Waktu</th>
+<body class="ml-10 mr-10 mt-10 bg-cyan-600">
+    <h1 class="text-3xl font-bold text-center py-5">Data Sensor MPU6050</h1>
+    <table class="mx-auto border-4 border-black " border="1">
+        <tr class="border-2 ml-10 mr-10 border-black">
+            <th class="border-2 px-3 py-3 border-black">ID</th>
+            <th class="border-2 px-3 py-3 border-black">Angka Sumbu</th>
+            <th class="border-2 px-3 py-3 border-black">Arah</th>
+            <th class="border-2 px-3 py-3 border-black">LDR Value</th>
+            <th class="border-2 px-3 py-3 border-black">Kondisi Cahaya</th>
+            <th class="border-2 px-3 py-3 border-black">Waktu</th>
         </tr>
         <?php
         // Menampilkan data dari database
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                echo "<tr>
-                        <td>" . $row["id_sensor"] . "</td>
-                        <td>" . $row["angka_sumbu"] . "</td>
-                        <td>" . $row["arah"] . "</td>
-                        <td>" . $row["ldr_value"] . "</td>
-                        <td>" . $row["kondisi_cahaya"] . "</td>
-                        <td>" . $row["waktu"] . "</td>
+                echo "<tr class='border-2 ml-10 mr-10 border-black'>
+                        <td class='border-2 px-4 py-3 border-black'>" . $row["id_sensor"] . "</td>
+                        <td class='border-2 px-4 py-3 border-black'>" . $row["angka_sumbu"] . "</td>
+                        <td class='border-2 px-4 py-3 border-black'>" . $row["arah"] . "</td>
+                        <td class='border-2 px-4 py-3 border-black'>" . $row["ldr_value"] . "</td>
+                        <td class='border-2 px-4 py-3 border-black'>" . $row["kondisi_cahaya"] . "</td>
+                        <td class='border-2 px-4 py-3 border-black'>" . $row["waktu"] . "</td>
                       </tr>";
             }
         } else {
